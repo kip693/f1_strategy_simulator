@@ -1,0 +1,21 @@
+{
+  "generated_at": "2025-07-15T00:23:15.705434",
+  "source": "2024 Japan GP Race Data",
+  "tire_compounds": {
+    "SOFT": {
+      "performance_delta": 1.007,
+      "degradation_rate": 0.4243,
+      "typical_stint_length": 8
+    },
+    "MEDIUM": {
+      "performance_delta": 0.0,
+      "degradation_rate": 0.1481,
+      "typical_stint_length": 14
+    },
+    "HARD": {
+      "performance_delta": 0.03,
+      "degradation_rate": 0.1456,
+      "typical_stint_length": 18
+    }
+  }
+}

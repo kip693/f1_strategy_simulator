@@ -1,0 +1,89 @@
+{
+  "version": "2.0",
+  "description": "Realistic dynamic pit loss calculation based on F1 racing analysis",
+  "base_pit_loss": 22.0,
+  "lap_factors": {
+    "early_race": {
+      "laps": [
+        1,
+        15
+      ],
+      "factor": 1.15,
+      "description": "Heavy traffic in early race"
+    },
+    "mid_race": {
+      "laps": [
+        16,
+        35
+      ],
+      "factor": 1.0,
+      "description": "Normal traffic conditions"
+    },
+    "late_race": {
+      "laps": [
+        36,
+        60
+      ],
+      "factor": 0.95,
+      "description": "Light traffic in late race"
+    }
+  },
+  "team_factors": {
+    "top_teams": {
+      "drivers": [
+        1,
+        11,
+        16,
+        55,
+        44,
+        63
+      ],
+      "factor": 0.92,
+      "description": "Elite pit crews"
+    },
+    "midfield_teams": {
+      "drivers": [
+        4,
+        81,
+        14,
+        18,
+        10,
+        27
+      ],
+      "factor": 1.0,
+      "description": "Standard pit crews"
+    },
+    "back_teams": {
+      "drivers": [
+        77,
+        20,
+        24,
+        22,
+        2,
+        31
+      ],
+      "factor": 1.08,
+      "description": "Developing pit crews"
+    }
+  },
+  "situation_factors": {
+    "safety_car": {
+      "factor": 1.25,
+      "description": "Pit lane congestion during safety car"
+    },
+    "rain": {
+      "factor": 1.15,
+      "description": "Slower operations in wet conditions"
+    },
+    "damaged_car": {
+      "factor": 1.3,
+      "description": "Additional time for damage assessment"
+    }
+  },
+  "random_variation": {
+    "std_dev": 1.2,
+    "min_factor": 0.85,
+    "max_factor": 1.2,
+    "description": "Natural variation in pit stop execution"
+  }
+}

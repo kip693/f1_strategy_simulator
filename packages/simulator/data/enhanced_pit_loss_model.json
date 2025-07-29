@@ -1,0 +1,190 @@
+{
+  "version": "3.0",
+  "description": "Enhanced dynamic pit loss with circuit characteristics and actual data analysis",
+  "circuits": {
+    "suzuka": {
+      "name": "Suzuka International Racing Course",
+      "pit_lane_length": 310,
+      "pit_speed_limit": 80,
+      "pit_entry_complexity": 1.3,
+      "pit_exit_complexity": 1.1,
+      "track_position_loss": 18.0,
+      "theoretical_calculation": {
+        "traverse_time": 13.950000000000001,
+        "entry_penalty": 0.6000000000000001,
+        "exit_penalty": 0.20000000000000018,
+        "pit_work_time": 2.3,
+        "total_pit_lane_time": 17.05,
+        "track_position_loss": 18.0,
+        "total_pit_loss": 35.05
+      }
+    },
+    "monaco": {
+      "name": "Circuit de Monaco",
+      "pit_lane_length": 350,
+      "pit_speed_limit": 60,
+      "pit_entry_complexity": 1.8,
+      "pit_exit_complexity": 2.0,
+      "track_position_loss": 22.5,
+      "theoretical_calculation": {
+        "traverse_time": 21.0,
+        "entry_penalty": 1.6,
+        "exit_penalty": 2.0,
+        "pit_work_time": 2.3,
+        "total_pit_lane_time": 26.900000000000002,
+        "track_position_loss": 22.5,
+        "total_pit_loss": 49.400000000000006
+      }
+    },
+    "silverstone": {
+      "name": "Silverstone Circuit",
+      "pit_lane_length": 415,
+      "pit_speed_limit": 80,
+      "pit_entry_complexity": 1.0,
+      "pit_exit_complexity": 1.2,
+      "track_position_loss": 19.5,
+      "theoretical_calculation": {
+        "traverse_time": 18.675,
+        "entry_penalty": 0.0,
+        "exit_penalty": 0.3999999999999999,
+        "pit_work_time": 2.3,
+        "total_pit_lane_time": 21.375,
+        "track_position_loss": 19.5,
+        "total_pit_loss": 40.875
+      }
+    },
+    "monza": {
+      "name": "Autodromo Nazionale Monza",
+      "pit_lane_length": 385,
+      "pit_speed_limit": 80,
+      "pit_entry_complexity": 1.1,
+      "pit_exit_complexity": 1.0,
+      "track_position_loss": 16.5,
+      "theoretical_calculation": {
+        "traverse_time": 17.325,
+        "entry_penalty": 0.20000000000000018,
+        "exit_penalty": 0.0,
+        "pit_work_time": 2.3,
+        "total_pit_lane_time": 19.825,
+        "track_position_loss": 16.5,
+        "total_pit_loss": 36.325
+      }
+    },
+    "spa": {
+      "name": "Circuit de Spa-Francorchamps",
+      "pit_lane_length": 425,
+      "pit_speed_limit": 80,
+      "pit_entry_complexity": 1.2,
+      "pit_exit_complexity": 1.4,
+      "track_position_loss": 21.0,
+      "theoretical_calculation": {
+        "traverse_time": 19.125,
+        "entry_penalty": 0.3999999999999999,
+        "exit_penalty": 0.7999999999999998,
+        "pit_work_time": 2.3,
+        "total_pit_lane_time": 22.625,
+        "track_position_loss": 21.0,
+        "total_pit_loss": 43.625
+      }
+    }
+  },
+  "current_circuit": "suzuka",
+  "data_analysis": {},
+  "base_pit_loss": 35.0,
+  "lap_factors": {
+    "early_race": {
+      "laps": [
+        1,
+        15
+      ],
+      "factor": 1.1,
+      "description": "Early race with formation and initial traffic"
+    },
+    "mid_race": {
+      "laps": [
+        16,
+        35
+      ],
+      "factor": 1.0,
+      "description": "Normal racing conditions"
+    },
+    "late_race": {
+      "laps": [
+        36,
+        60
+      ],
+      "factor": 0.95,
+      "description": "Late race with reduced traffic"
+    }
+  },
+  "team_factors": {
+    "top_teams": {
+      "drivers": [
+        1,
+        11,
+        16,
+        55,
+        44,
+        63
+      ],
+      "factor": 0.88,
+      "description": "Elite pit crews with fastest equipment"
+    },
+    "midfield_teams": {
+      "drivers": [
+        4,
+        81,
+        14,
+        18,
+        10,
+        27
+      ],
+      "factor": 1.0,
+      "description": "Standard F1 pit crews"
+    },
+    "back_teams": {
+      "drivers": [
+        77,
+        20,
+        24,
+        22,
+        2,
+        31
+      ],
+      "factor": 1.12,
+      "description": "Developing teams with limited resources"
+    }
+  },
+  "situation_factors": {
+    "safety_car": {
+      "factor": 1.2,
+      "description": "Pit lane congestion during safety car"
+    },
+    "rain": {
+      "factor": 1.15,
+      "description": "Slower operations in wet conditions"
+    },
+    "damaged_car": {
+      "factor": 1.25,
+      "description": "Additional time for damage assessment"
+    }
+  },
+  "random_variation": {
+    "std_dev": 1.0,
+    "min_factor": 0.9,
+    "max_factor": 1.15,
+    "description": "Natural variation in pit stop execution"
+  },
+  "circuit_factors": {
+    "pit_lane_traffic": {
+      "low": 0.95,
+      "medium": 1.0,
+      "high": 1.15
+    },
+    "weather_impact": {
+      "dry": 1.0,
+      "damp": 1.08,
+      "wet": 1.18
+    }
+  }
+}
